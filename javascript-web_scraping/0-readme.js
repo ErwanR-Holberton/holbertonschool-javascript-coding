@@ -1,4 +1,5 @@
 #!/usr/bin/node
+// read a file and log its content
 const fs = require('fs');
 
 const fileName = process.argv[2];
