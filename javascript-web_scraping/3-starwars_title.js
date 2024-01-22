@@ -1,5 +1,5 @@
 #!/usr/bin/node
-// send request and get status
+// send request to star wars api with a number and print the title
 const request = require('request');
 
 const number = process.argv[2];
@@ -9,6 +9,6 @@ request(url + number, { json: true }, (error, response, body) => {
   if (response && response.statusCode === 200) {
     console.log(body.title);
   } else {
-    console.error(`Error'}`);
+    console.error(error);
   }
 });
