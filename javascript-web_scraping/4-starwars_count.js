@@ -11,12 +11,12 @@ request(url, (error, response, body) => {
     const films = JSON.parse(body).results;
     let count = 0;
     for (const film in films) {
-        for (const character in films[film]['characters']) {
-            if (films[film]['characters'][character].includes("18")) {
-                count += 1;
-            }
+      for (const character in films[film].characters) {
+        if (films[film].characters[character].includes('18')) {
+          count += 1;
         }
+      }
     }
-    console.log(count)
+    console.log(count);
   }
 });
