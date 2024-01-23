@@ -4,13 +4,19 @@ const request = require('request');
 
 const url = process.argv[2];
 
-request(url, { json: true }, (error, response, body) => {
+request(url, (error, response, body) => {
   if (error) {
     console.error(error);
   } else {
-    const filmsWithWedge = body.results.filter((film) =>
-      film.characters.includes(`https://swapi-api.hbtn.io/api/people/${18}/`)
-    );
-    console.log(filmsWithWedge.length);
+    const films = JSON.parse(body).results;
+    let count = 0;
+    for (const film in films) {
+        for (const character in films[film]['characters']) {
+            if (films[film]['characters'][character].includes("18")) {
+                count += 1;
+            }
+        }
+    }
+    console.log(count)
   }
 });
