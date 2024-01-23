@@ -16,11 +16,7 @@ request(url, { json: true }, (error, response, body) => {
         }
       }
     }
-    let string2 = JSON.stringify(completedByUser);
-    string2 = string2.replace(/,(\s*)/g, ',\n$1  ');
-    string2 = string2.substring(1, string2.length - 1);
-    string2 = "{ " + string2 + " }"
-    console.log(string2);
+    console.log(completedByUser);
   } else {
     console.error(error, 'hello');
   }
