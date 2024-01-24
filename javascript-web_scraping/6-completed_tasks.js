@@ -16,19 +16,7 @@ request(url, { json: true }, (error, response, body) => {
         }
       }
     }
-    let count = 0;
-    process.stdout.write("{")
-    for (const key in completedByUser) {
-        if (count != 0) {
-            process.stdout.write(",\n")
-            process.stdout.write(" ")
-        } else {
-        }
-        count += 1;
-        const value = completedByUser[key];
-        process.stdout.write(` \u001b[32m'${key}'\u001b[0m: \u001b[33m${value}\u001b[0m`);
-      }
-    console.log(" }")
+    console.log(completedByUser);
   } else {
     console.error(error, 'hello');
   }
