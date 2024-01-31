@@ -13,6 +13,6 @@ interfaceIsReserved.question('', (input) => {
 });
 
 interfaceIsReserved.on('close', () => {
-    console.log('This important software is now closing');
-    process.exit(0);
-  });
+  console.log('This important software is now closing');
+  process.exit(0);
+});
