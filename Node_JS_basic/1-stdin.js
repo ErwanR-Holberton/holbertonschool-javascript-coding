@@ -8,4 +8,6 @@ function useStdin() {
   });
 }
 module.exports = useStdin;
-useStdin()
+if (require.main === module) {
+  useStdin();
+}
