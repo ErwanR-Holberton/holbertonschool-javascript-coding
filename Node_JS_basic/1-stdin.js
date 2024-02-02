@@ -8,3 +8,4 @@ function useStdin() {
   });
 }
 module.exports = useStdin;
+useStdin()
