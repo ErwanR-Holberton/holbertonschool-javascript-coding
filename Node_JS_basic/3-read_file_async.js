@@ -25,12 +25,15 @@ function countStudents(path) {
         }
       });
 
+      let resultStr = `Number of students: ${students.length}`
       console.log('Number of students:', students.length);
       Object.keys(fieldCounts).forEach((field) => {
+        resultStr += '\n';
         console.log(`Number of students in ${field}: ${fieldCounts[field]}. List: ${students.filter((student) => student.field === field).map((student) => student.firstname).join(', ')}`);
+        resultStr += `Number of students in ${field}: ${fieldCounts[field]}. List: ${students.filter((student) => student.field === field).map((student) => student.firstname).join(', ')}`
       });
 
-      resolve();
+      resolve(resultStr);
     });
   });
 }
