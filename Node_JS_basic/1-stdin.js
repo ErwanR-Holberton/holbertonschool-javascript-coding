@@ -1,4 +1,4 @@
-if (require.main === module) {
+function useStdin() {
   process.stdout.write('Welcome to Holberton School, what is your name?\n');
 
   process.stdin.on('data', (data) => {
@@ -7,3 +7,4 @@ if (require.main === module) {
     process.exit();
   });
 }
+module.exports = useStdin;
