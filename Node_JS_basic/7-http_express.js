@@ -1,12 +1,14 @@
 const express = require('express');
 const countStudents = require('./3-read_file_async');
 
+const path = process.argv[2];
+
 const app = express();
 app.get('/', (req, response) => {
   response.send('Hello Holberton School!');
 });
 app.get('/students', (req, response) => {
-  countStudents('./database.csv')
+  countStudents(path)
     .then((result) => {
       response.send(`This is the list of our students\n${result}`);
     })
