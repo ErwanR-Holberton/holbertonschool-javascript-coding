@@ -4,6 +4,7 @@ const countStudents = require('./3-read_file_async');
 const path = process.argv[2];
 
 const app = http.createServer((req, res) => {
+  res.writeHead(200, { 'Content-type': 'text/plain' });
   if (req.method === 'GET') {
     if (req.url === '/') {
       res.end('Hello Holberton School!');
@@ -17,12 +18,7 @@ const app = http.createServer((req, res) => {
         });
     }
   }
-});
+}).listen(1245);
 
-const PORT = 1245;
-
-app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
-});
 
 module.exports = app;
