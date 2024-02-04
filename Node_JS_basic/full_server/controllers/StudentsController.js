@@ -4,7 +4,7 @@ const db_path = '../database.csv';
 
 class StudentsController {
   static getAllStudents(request, response) {
-    readDatabase(db_path)
+    readDatabase(process.argv[2])
       .then((result) => {
         let responseStr = 'This is the list of our students';
         Object.entries(result).forEach(([key, value]) => {
@@ -16,7 +16,7 @@ class StudentsController {
   }
 
   static getAllStudentsByMajor(request, response) {
-    readDatabase(db_path)
+    readDatabase(process.argv[2])
       .then((result) => {
         const { major } = request.params;
         if (result.hasOwnProperty(major)) {
