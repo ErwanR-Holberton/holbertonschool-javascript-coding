@@ -9,7 +9,7 @@ const app = http.createServer((req, res) => {
     if (req.url === '/') {
       res.end('Hello Holberton School!');
     } else if (req.url === '/students') {
-      res.write("This is the list of our students\n")
+      res.write('This is the list of our students\n');
       countStudents(path)
         .then((result) => {
           res.end(`${result}`);
@@ -20,6 +20,5 @@ const app = http.createServer((req, res) => {
     }
   }
 }).listen(1245);
-
 
 module.exports = app;
