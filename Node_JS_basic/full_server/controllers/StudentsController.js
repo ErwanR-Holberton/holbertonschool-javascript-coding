@@ -7,7 +7,6 @@ class StudentsController {
     readDatabase(db_path)
       .then((result) => {
         let responseStr = 'This is the list of our students';
-        console.log(result);
         Object.entries(result).forEach(([key, value]) => {
           responseStr += ` \nNumber of students in ${key}: 6. List: ${value.join(', ')}`;
         });
