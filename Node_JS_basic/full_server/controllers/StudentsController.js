@@ -6,7 +6,7 @@ class StudentsController {
       .then((result) => {
         let responseStr = 'This is the list of our students';
         Object.entries(result).forEach(([key, value]) => {
-          responseStr += `\nNumber of students in ${key}: ${value.length}. List: ${value.join(', ')}`;
+          responseStr += ` \nNumber of students in ${key}: ${value.length}. List: ${value.join(', ')}`;
         });
         response.status(200).send(responseStr);
       })
